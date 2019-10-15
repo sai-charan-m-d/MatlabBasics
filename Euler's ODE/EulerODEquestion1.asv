@@ -1,0 +1,15 @@
+clc; clear all;
+y0 = 1;
+x = [0 0.2 0.4 0.6];
+h = 0.2;
+yiplus1 = 0;  
+dyx = @(x,y) y*x*x;
+yi = y0;
+fprintf('     x     y \n');
+for i = 1:length(x)
+    yiplus1 = yi + h * dyx(x(i),yi);
+    fprintf('%f %f \n',x(i),yi );
+    yi = yiplus1;
+end
+y_analytical = exp()
+
