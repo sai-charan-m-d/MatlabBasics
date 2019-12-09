@@ -7,3 +7,24 @@ In numerical analysis, Lagrange polynomials are used for polynomial interpolatio
 
 ##  Runge Kutta Method
 In numerical analysis, the Runge–Kutta methods are a family of implicit and explicit iterative methods, which include the well-known routine called the Euler Method, used in temporal discretization for the approximate solutions of ordinary differential equations
+
+##  Secant Method
+The Newton-Raphson algorithm requires the evaluation of two functions (the function and its derivative) per each iteration. If they are complicated expressions it will take considerable amount of effort to do hand calculations or large amount of CPU time for machine calculations. Hence it is desirable to have a method that converges (please see the section order of the numerical methods for theoretical details) as fast as Newton's method yet involves only the evaluation of the function
+
+##  Bisection Method
+The Bisection Method, also called the interval halving method, the binary search method, or the dichotomy method. is based on the Bolzano’s theorem for continuous functions.
+Theorem (Bolzano): If a function f(x) is continuous on an interval [a, b] and f(a)·f(b) < 0, then a value c ∈ (a, b) exist for which f(c) = 0.A function is continuous when small changes of the argument gives also in small changes in the result. In other words, if x changes with small steps f(x) will also change with small steps, it doesn’t give big “jumps” of the result.
+The value f(a)·f(b) < 0 means that f(a) and f(b) have different signs, which means that one of them is above the x-axis and the other one below the x-axis. In this case, if we plot the f(x) function, at some point, it will cross the x-axis. The x value for which the plot is crossing the x-axis is the root of the equation f(x) = 0.
+The Bisection Method looks to find the value c for which the plot of the function f crosses the x-axis. The c value is in this case is an approximation of the root of the function f(x). How close the value of c gets to the real root depends on the value of the tolerance we set for the algorithm.
+
+## Gauss Sedial Method
+The Gauss-Seidel method (called Seidel's method by Jeffreys and Jeffreys 1988, p. 305) is a technique for solving the n equations of the linear system of equations Ax=b one at a time in sequence, and uses previously computed results as soon as they are available.
+
+![Image description](http://mathworld.wolfram.com/images/equations/Gauss-SeidelMethod/NumberedEquation1.gif)
+
+There are two important characteristics of the Gauss-Seidel method should be noted. Firstly, the computations appear to be serial. Since each component of the new iterate depends upon all previously computed components, the updates cannot be done simultaneously as in the Jacobi method. Secondly, the new iterate x^((k)) depends upon the order in which the equations are examined. If this ordering is changed, the components of the new iterates (and not just their order) will also change.
+In terms of matrices, the definition of the Gauss-Seidel method can be expressed as:
+
+![Image description](http://mathworld.wolfram.com/images/equations/Gauss-SeidelMethod/NumberedEquation2.gif)
+
+where the matrices D, -L, and -U represent the diagonal, strictly lower triangular, and strictly upper triangular parts of A, respectively.The Gauss-Seidel method is applicable to strictly diagonally dominant, or symmetric positive definite matrices A.
