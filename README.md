@@ -1,9 +1,42 @@
 # Numarical Methods in Matlab
 ## Eulers ODE
-Euler's method is a numerical method to solve first order first degree differential equation with a given initial value. It is the most basic explicit method for numerical integration of ordinary differential equations and is the simplest Runge–Kutta method
+Euler's method is a numerical method to solve first order first degree differential equation with a given initial value. It is the most basic explicit method for numerical integration of ordinary differential equations and is the simpest Runge–Kutta method
+
+![Eulers ODE](https://wikimedia.org/api/rest_v1/media/math/render/svg/6e625e1fa005b4ad257d839d3b8dd82c17bb0f70)
+
+![Formula](https://wikimedia.org/api/rest_v1/media/math/render/svg/269f6c656eab53584639f205ecfe88b628af701a)
+
+And this is how we implement in Code
+
+```Matlab
+
+for i = 1:length(x)-1
+    y(i+1) = y(i) + h * dyx(x(i),y(i));
+    fprintf('%f %f \n',x(i),y(i) );
+end
+
+```
 
 ##  LagrangianInterpolation
 In numerical analysis, Lagrange polynomials are used for polynomial interpolation. For a given set of points (xj,yj) with no two xj values equal, the Lagrange polynomial is the polynomial of lowest degree that assumes at each value xj the corresponding value yj, so that the functions coincide at each point.
+
+![Formula1](https://www.geeksforgeeks.org/wp-content/ql-cache/quicklatex.com-de69594bcfcc6c6494f761dbfc68e17d_l3.svg)
+
+And this is how we implement in Code
+```Matlab
+
+yr = 0;
+L = ones(1,n);
+for i = 1:n
+    for j = 1:n
+        if(i~=j)
+            L(i)= L(i)*(xr-xArray(j))/(xArray(i)-xArray(j));
+        end
+    end
+    yr=yr+yArray(i)*L(i);
+end
+
+```
 
 ##  Runge Kutta Method
 In numerical analysis, the Runge–Kutta methods are a family of implicit and explicit iterative methods, which include the well-known routine called the Euler Method, used in temporal discretization for the approximate solutions of ordinary differential equations
